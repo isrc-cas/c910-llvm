@@ -43,6 +43,11 @@ def FeatureStdExtC
 def HasStdExtC : Predicate<"Subtarget->hasStdExtC()">,
                            AssemblerPredicate<"FeatureStdExtC">;
 
+def FeatureC910
+    : SubtargetFeature<"c910", "HasC910", "true",
+                       "Implement C910">;
+def HasC910 : Predicate<"Subtarget->hasC910()">,
+                           AssemblerPredicate<"FeatureC910">;
 
 def Feature64Bit
     : SubtargetFeature<"64bit", "HasRV64", "true", "Implements RV64">;
@@ -82,6 +87,9 @@ include "RISCVInstrInfo.td"
 // RISC-V processors supported.
 //===----------------------------------------------------------------------===//
 
+def : ProcessorModel<"c910", NoSchedModel, [Feature64Bit,FeatureStdExtA,FeatureStdExtC,
+                                            FeatureStdExtM,FeatureStdExtF,FeatureStdExtD,FeatureC910]>;
+
 def : ProcessorModel<"generic-rv32", NoSchedModel, []>;
 
 def : ProcessorModel<"generic-rv64", NoSchedModel, [Feature64Bit]>;
@@ -109,3 +117,5 @@ def RISCV : Target {
   let AssemblyWriters = [RISCVAsmWriter];
   let AllowRegisterRenaming = 1;
 }
+
+include "RISCVPfmCounters.td"
