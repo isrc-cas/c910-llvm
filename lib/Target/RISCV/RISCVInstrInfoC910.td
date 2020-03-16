@@ -29,6 +29,6 @@ def REV : BO_2<0b10000,01,"rev">;
 def REVW : BO_2<0b10010,00,"revw">;
 def TSTNBZ : BO_2<0b10000,00,"tstnbz">;
 
-//let hasSideEffects = 0, mayLoad = 0, mayStore = 1 in
-//def TST : RVInstC910BO_3<0b100010, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, simm12:$imm6),
-//                            "tst", "$rd, $rs1, $imm6">;     //???立即数的类型定义      
+let hasSideEffects = 0, mayLoad = 0, mayStore = 1 in
+def TST : RVInstC910BO_3<0b100010, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, simm12:$imm6),
+                            "tst", "$rd, $rs1, $imm6">;    

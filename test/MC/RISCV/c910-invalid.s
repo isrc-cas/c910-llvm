@@ -1,5 +1,8 @@
-# RUN: not llvm-mc -triple riscv64 < %s 2>&1 | FileCheck %s
+# RUN: not llvm-mc -triple riscv64 -mcpu=c910  < %s 2>&1 | FileCheck %s
 
-# c910 instructions can't be used for RV32
-
+# Too few operands
+rev a0  # CHECK: :[[@LINE]]:1: error: too few operands for instruction
+revw a0  # CHECK: :[[@LINE]]:1: error: too few operands for instruction
+ff0 a0  # CHECK: :[[@LINE]]:1: error: too few operands for instruction
+ff1 a0  # CHECK: :[[@LINE]]:1: error: too few operands for instruction
 
