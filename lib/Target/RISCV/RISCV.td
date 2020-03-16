@@ -118,4 +118,3 @@ def RISCV : Target {
   let AllowRegisterRenaming = 1;
 }
 
-include "RISCVPfmCounters.td"
