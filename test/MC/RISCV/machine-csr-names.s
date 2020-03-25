@@ -1227,3 +1227,138 @@ csrrs t2, 0x33E, zero
 csrrs t1, mhpmevent31, zero
 # uimm12
 csrrs t2, 0x33F, zero
+
+######################################
+# C910 Machine Processor Extension CSRs
+######################################
+
+# mcupid
+# name
+# CHECK-INST: csrrs t1, mcupid, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x00,0xfc]
+# CHECK-INST-ALIAS: csrr t1, mcupid
+# uimm12
+# CHECK-INST: csrrs t2, mcupid, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x00,0xfc]
+# CHECK-INST-ALIAS: csrr t2, mcupid
+# name
+csrrs t1, mcupid, zero
+# uimm12
+csrrs t2, 0xFC0, zero
+
+######################################
+# C910  Machine Extension CSRs
+######################################
+
+# mxstatus
+# name
+# CHECK-INST: csrrs t1, mxstatus, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x00,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mxstatus
+# uimm12
+# CHECK-INST: csrrs t2, mxstatus, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x00,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mxstatus
+# name
+csrrs t1, mxstatus, zero
+# uimm12
+csrrs t2, 0x7C0, zero
+
+# mhcr
+# name
+# CHECK-INST: csrrs t1, mhcr, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x10,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mhcr
+# uimm12
+# CHECK-INST: csrrs t2, mhcr, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x10,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mhcr
+# name
+csrrs t1, mhcr, zero
+# uimm12
+csrrs t2, 0x7C1, zero
+
+# mcor
+# name
+# CHECK-INST: csrrs t1, mcor, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x20,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mcor
+# uimm12
+# CHECK-INST: csrrs t2, mcor, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x20,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mcor
+# name
+csrrs t1, mcor, zero
+# uimm12
+csrrs t2, 0x7C2, zero
+
+# mccr2
+# name
+# CHECK-INST: csrrs t1, mccr2, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x30,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mccr2
+# uimm12
+# CHECK-INST: csrrs t2, mccr2, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x30,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mccr2
+# name
+csrrs t1, mccr2, zero
+# uimm12
+csrrs t2, 0x7C3, zero
+
+# mcer2
+# name
+# CHECK-INST: csrrs t1, mcer2, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x40,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mcer2
+# uimm12
+# CHECK-INST: csrrs t2, mcer2, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x40,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mcer2
+# name
+csrrs t1, mcer2, zero
+# uimm12
+csrrs t2, 0x7C4, zero
+
+# mhint
+# name
+# CHECK-INST: csrrs t1, mhint, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x50,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mhint
+# uimm12
+# CHECK-INST: csrrs t2, mhint, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x50,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mhint
+# name
+csrrs t1, mhint, zero
+# uimm12
+csrrs t2, 0x7C5, zero
+
+# mrmr
+# name
+# CHECK-INST: csrrs t1, mrmr, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x60,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mrmr
+# uimm12
+# CHECK-INST: csrrs t2, mrmr, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x60,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mrmr
+# name
+csrrs t1, mrmr, zero
+# uimm12
+csrrs t2, 0x7C6, zero
+
+# mrvbr
+# name
+# CHECK-INST: csrrs t1, mrvbr, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x70,0x7c]
+# CHECK-INST-ALIAS: csrr t1, mrvbr
+# uimm12
+# CHECK-INST: csrrs t2, mrvbr, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x70,0x7c]
+# CHECK-INST-ALIAS: csrr t2, mrvbr
+# name
+csrrs t1, mrvbr, zero
+# uimm12
+csrrs t2, 0x7C7, zero
+
