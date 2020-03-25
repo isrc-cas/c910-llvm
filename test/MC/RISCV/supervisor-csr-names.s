@@ -191,3 +191,49 @@ csrrs t2, 0x144, zero
 csrrs t1, satp, zero
 # uimm12
 csrrs t2, 0x180, zero
+
+#########################################
+# C910 Supervisor Extension CSRs
+#########################################
+
+# sxstatus
+# name
+# CHECK-INST: csrrs t1, sxstatus, zero
+# CHECK-ENC: encoding: [0x73,0x23,0x00,0x5c]
+# CHECK-INST-ALIAS: csrr t1, sxstatus
+# uimm12
+# CHECK-INST: csrrs t2, sxstatus, zero
+# CHECK-ENC: encoding: [0xf3,0x23,0x00,0x5c]
+# CHECK-INST-ALIAS: csrr t2, sxstatus
+# name
+csrrs t1, sxstatus, zero
+# uimm12
+csrrs t2, 0x5C0, zero
+
+# shcr
+# name
+# CHECK-INST: csrrs t1, shcr, zero
+# CHECK-ENC: encoding: [0x73,0x23,0x10,0x5c]
+# CHECK-INST-ALIAS: csrr t1, shcr
+# uimm12
+# CHECK-INST: csrrs t2, shcr, zero
+# CHECK-ENC: encoding: [0xf3,0x23,0x10,0x5c]
+# CHECK-INST-ALIAS: csrr t2, shcr
+# name
+csrrs t1, shcr, zero
+# uimm12
+csrrs t2, 0x5C1, zero
+
+# scer2
+# name
+# CHECK-INST: csrrs t1, scer2, zero
+# CHECK-ENC: encoding: [0x73,0x23,0x20,0x5c]
+# CHECK-INST-ALIAS: csrr t1, scer2
+# uimm12
+# CHECK-INST: csrrs t2, scer2, zero
+# CHECK-ENC: encoding: [0xf3,0x23,0x20,0x5c]
+# CHECK-INST-ALIAS: csrr t2, scer2
+# name
+csrrs t1, scer2, zero
+# uimm12
+csrrs t2, 0x5C2, zero
