@@ -585,3 +585,17 @@ csrrs t2, 0xC1E, zero
 csrrs t1, hpmcounter31, zero
 # uimm12
 csrrs t2, 0xC1F, zero
+
+# fxcr
+# name
+# CHECK-INST: csrrs t1, fxcr, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x00,0x80]
+# CHECK-INST-ALIAS: csrr t1, fxcr
+# uimm12
+# CHECK-INST: csrrs t2, fxcr, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x00,0x80]
+# CHECK-INST-ALIAS: csrr t2, fxcr
+# name
+csrrs t1, fxcr, zero
+# uimm12
+csrrs t2, 0x800, zero
