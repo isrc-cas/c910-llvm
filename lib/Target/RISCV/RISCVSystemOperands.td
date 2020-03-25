@@ -334,6 +334,33 @@ def : SysReg<"mhpmevent30", 0x33E>;
 def : SysReg<"mhpmevent31", 0x33F>;
 
 //===-----------------------------------------------
+// C910 Machine Extended CSRs
+//===-----------------------------------------------
+def MXSTATUS : SysReg<"mxstatus", 0x7C0>;
+def MHCR : SysReg<"mhcr", 0x7C1>;
+def MCOR : SysReg<"mcor", 0x7C2>;
+def MCCR2 : SysReg<"mccr2", 0x7C3>;
+def MCER2 : SysReg<"mcer2", 0x7C4>;
+def MHINT : SysReg<"mhint", 0x7C5>;
+def MRMR : SysReg<"mrmr", 0x7C6>;
+def MRVBR : SysReg<"mrvbr", 0x7C7>;
+
+//===-----------------------------------------------
+// C910 Machine Cache Access Extended CSRs
+//===-----------------------------------------------
+
+def MCINS : SysReg<"mcins", 0x7D2>;
+def MCINDEX : SysReg<"mcindex", 0x7D3>;
+def MCDATA0 : SysReg<"mcdata0", 0x7D4>;
+def MCDATA1 : SysReg<"mcdata1", 0x7D5>;
+
+//===-----------------------------------------------
+// C910 Machine Processor Extended CSRs
+//===-----------------------------------------------
+def MCPUID : SysReg<"mcupid", 0xFC0>;
+
+
+//===-----------------------------------------------
 // Debug/ Trace Registers (shared with Debug Mode)
 //===-----------------------------------------------
 def : SysReg<"tselect", 0x7A0>;
