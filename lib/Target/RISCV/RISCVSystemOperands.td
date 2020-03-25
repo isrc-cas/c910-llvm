@@ -75,6 +75,13 @@ def FFLAGS : SysReg<"fflags", 0x001>;
 def FRM    : SysReg<"frm", 0x002>;
 def FCSR   : SysReg<"fcsr", 0x003>;
 
+
+//===--------------------------
+//  C910 User extended CSRs
+//===--------------------------
+
+def FXCR : SysReg<"fxcr", 0x800>;
+
 //===--------------------------
 // User Counter/Timers
 //===--------------------------
@@ -157,6 +164,13 @@ def : SysReg<"sideleg", 0x103>;
 def : SysReg<"sie", 0x104>;
 def : SysReg<"stvec", 0x105>;
 def : SysReg<"scounteren", 0x106>;
+
+//===--------------------------
+//  C910 Supervisor extended CSRs
+//===--------------------------
+def SXSTATUS : SysReg<"sxstatus", 0x5C0>;
+def SHCR : SysReg<"shcr", 0x5C1>;
+def SCER2 : SysReg<"scer2", 0x5C2>;
 
 //===--------------------------
 // Supervisor Trap Handling
