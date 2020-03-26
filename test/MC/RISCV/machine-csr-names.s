@@ -1247,6 +1247,67 @@ csrrs t1, mcupid, zero
 csrrs t2, 0xFC0, zero
 
 ######################################
+# C910  Machine Cache Extension CSRs
+######################################
+
+# mcins
+# name
+# CHECK-INST: csrrs t1, mcins, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x20,0x7d]
+# CHECK-INST-ALIAS: csrr t1, mcins
+# uimm12
+# CHECK-INST: csrrs t2, mcins, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x20,0x7d]
+# CHECK-INST-ALIAS: csrr t2, mcins
+# name
+csrrs t1, mcins, zero
+# uimm12
+csrrs t2, 0x7D2, zero
+
+# mcindex
+# name
+# CHECK-INST: csrrs t1, mcindex, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x30,0x7d]
+# CHECK-INST-ALIAS: csrr t1, mcindex
+# uimm12
+# CHECK-INST: csrrs t2, mcindex, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x30,0x7d]
+# CHECK-INST-ALIAS: csrr t2, mcindex
+# name
+csrrs t1, mcindex, zero
+# uimm12
+csrrs t2, 0x7D3, zero
+
+# mcidata0
+# name
+# CHECK-INST: csrrs t1, mcdata0, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x40,0x7d]
+# CHECK-INST-ALIAS: csrr t1, mcdata0
+# uimm12
+# CHECK-INST: csrrs t2, mcdata0, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x40,0x7d]
+# CHECK-INST-ALIAS: csrr t2, mcdata0
+# name
+csrrs t1, mcdata0, zero
+# uimm12
+csrrs t2, 0x7D4, zero
+
+# mcidata1
+# name
+# CHECK-INST: csrrs t1, mcdata1, zero
+# CHECK-ENC:  encoding: [0x73,0x23,0x50,0x7d]
+# CHECK-INST-ALIAS: csrr t1, mcdata1
+# uimm12
+# CHECK-INST: csrrs t2, mcdata1, zero
+# CHECK-ENC:  encoding: [0xf3,0x23,0x50,0x7d]
+# CHECK-INST-ALIAS: csrr t2, mcdata1
+# name
+csrrs t1, mcdata1, zero
+# uimm12
+csrrs t2, 0x7D5, zero
+
+
+######################################
 # C910  Machine Extension CSRs
 ######################################
 
