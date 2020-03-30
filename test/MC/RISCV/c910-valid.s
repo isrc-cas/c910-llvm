@@ -326,3 +326,86 @@ sdd a2, 0(a1)
 # CHECK-ASM: encoding: [0x0b,0xe6,0x05,0xf8]
 swd a2, 0(a1)
 
+
+# CHECK-ASM-AND-OBJ: dcache_call
+# CHECK-ASM: encoding: [0x0b,0x00,0x10,0x00]
+dcache_call
+
+# CHECK-ASM-AND-OBJ: dcache_iall
+# CHECK-ASM: encoding: [0x0b,0x00,0x20,0x00]
+dcache_iall
+
+# CHECK-ASM-AND-OBJ: icache_iall
+# CHECK-ASM: encoding: [0x0b,0x00,0x00,0x01]
+icache_iall
+
+# CHECK-ASM-AND-OBJ: icache_ialls
+# CHECK-ASM: encoding: [0x0b,0x00,0x10,0x01]
+icache_ialls
+
+# CHECK-ASM-AND-OBJ: l2cache_call
+# CHECK-ASM: encoding: [0x0b,0x00,0x50,0x01]
+l2cache_call
+
+# CHECK-ASM-AND-OBJ: l2cache_ciall
+# CHECK-ASM: encoding: [0x0b,0x00,0x70,0x01]
+l2cache_ciall
+
+# CHECK-ASM-AND-OBJ: l2cache_iall
+# CHECK-ASM: encoding: [0x0b,0x00,0x60,0x01]
+l2cache_iall
+
+
+# CHECK-ASM-AND-OBJ: dcache_ciall a1
+# CHECK-ASM: encoding: [0x0b,0x80,0xb5,0x02]
+dcache_ciall a1
+
+# CHECK-ASM-AND-OBJ: dcache_cipa a1
+# CHECK-ASM: encoding: [0x0b,0x80,0xb5,0x02]
+dcache_cipa a1
+
+# CHECK-ASM-AND-OBJ: dcache_cisw a1
+# CHECK-ASM: encoding: [0x0b,0x80,0x35,0x02]
+dcache_cisw a1
+
+# CHECK-ASM-AND-OBJ: dcache_civa a2
+# CHECK-ASM: encoding: [0x0b,0x00,0x76,0x02]
+dcache_civa a2
+
+# CHECK-ASM-AND-OBJ: dcache_cpa a3
+# CHECK-ASM: encoding: [0x0b,0x80,0x96,0x02]
+dcache_cpa a3
+
+# CHECK-ASM-AND-OBJ: dcache_cpal1 a2
+# CHECK-ASM: encoding: [0x0b,0x00,0x86,0x02]
+dcache_cpal1 a2
+
+# CHECK-ASM-AND-OBJ: dcache_cva a2
+# CHECK-ASM: encoding: [0x0b,0x00,0x56,0x02]
+dcache_cva a2
+
+# CHECK-ASM-AND-OBJ: dcache_cval1 a2
+# CHECK-ASM: encoding: [0x0b,0x00,0x46,0x02]
+dcache_cval1 a2
+
+# CHECK-ASM-AND-OBJ: dcache_ipa a2
+# CHECK-ASM: encoding: [0x0b,0x00,0xa6,0x02]
+dcache_ipa a2
+
+# CHECK-ASM-AND-OBJ: dcache_isw a2
+# CHECK-ASM: encoding: [0x0b,0x00,0x26,0x02]
+dcache_isw a2
+
+# CHECK-ASM-AND-OBJ: dcache_iva a2
+# CHECK-ASM: encoding: [0x0b,0x00,0x66,0x02]
+dcache_iva a2
+
+# CHECK-ASM-AND-OBJ: icache_ipa a3
+# CHECK-ASM: encoding: [0x0b,0x80,0x86,0x03]
+icache_ipa a3
+
+# CHECK-ASM-AND-OBJ: icache_iva a3
+# CHECK-ASM: encoding: [0x0b,0x80,0x06,0x03]
+icache_iva a3
+
+

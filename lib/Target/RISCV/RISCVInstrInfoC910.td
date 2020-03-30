@@ -271,5 +271,41 @@ def LWUD : Load_ld<0b11110, "lwud">;
 def SDD : Store_sd<0b11111, "sdd">;
 def SwD : Store_sd<0b11111, "swd">;
 
+//===----------------------------------------------------------------------===//
+// cache extension instruction set 
+//===----------------------------------------------------------------------===//
+let hasSideEffects = 1, mayLoad = 0, mayStore = 0 in
+class CACHE_1<bits<5> funct5, string opcodestr>
+    : RVInstC910CACHE_1<funct5, OPC_CUSTOM0, (outs), (ins),
+               opcodestr, "">;
+
+def DCACHE_CALL : CACHE_1<0b00001, "dcache_call">;
+def DCACHE_IALL : CACHE_1<0b00010, "dcache_iall">;
+def ICACHE_IALL : CACHE_1<0b10000, "icache_iall">;
+def ICACHE_IALLS : CACHE_1<0b10001, "icache_ialls">;
+def L2CACHE_CALL : CACHE_1<0b10101, "l2cache_call">;
+def L2CACHE_CIALL : CACHE_1<0b10111, "l2cache_ciall">;
+def L2CACHE_IALL : CACHE_1<0b10110, "l2cache_iall">;
+
+
+
+let hasSideEffects = 1, mayLoad = 0, mayStore = 1 in
+class CACHE_2<bits<5> funct5,  string opcodestr>
+    : RVInstC910CACHE_2<funct5,  OPC_CUSTOM0, (outs), (ins GPR:$rs1),
+              opcodestr, "$rs1">;
+
+def DCACHE_CIALL : CACHE_2<0b01011, "dcache_ciall">;
+def DCACHE_CIPA : CACHE_2<0b01011, "dcache_cipa">;
+def DCACHE_CISW : CACHE_2<0b00011, "dcache_cisw">;
+def DCACHE_CIVA : CACHE_2<0b00111, "dcache_civa">;
+def DCACHE_CPA : CACHE_2<0b01001, "dcache_cpa">;
+def DCACHE_CPAL1 : CACHE_2<0b01000, "dcache_cpal1">;
+def DCACHE_CVA : CACHE_2<0b00101, "dcache_cva">;
+def DCACHE_CVAL1 : CACHE_2<0b00100, "dcache_cval1">;
+def DCACHE_IPA : CACHE_2<0b01010, "dcache_ipa">;
+def DCACHE_ISW : CACHE_2<0b00010, "dcache_isw">;
+def DCACHE_IVA : CACHE_2<0b00110, "dcache_iva">;
+def ICACHE_IPA : CACHE_2<0b11000, "icache_ipa">;
+def ICACHE_IVA : CACHE_2<0b10000, "icache_iva">;
 
 

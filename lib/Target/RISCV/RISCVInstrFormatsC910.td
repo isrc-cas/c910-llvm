@@ -167,3 +167,34 @@ class RVInstC910LS_4<bits<5> funct5, RISCVOpcode opcode,
   let Opcode = opcode.Value;
 }
 
+//===----------------------------------------------------------------------===//
+//
+// cache instruction set extension
+//
+//===----------------------------------------------------------------------===//
+class RVInstC910CACHE_1<bits<5> funct5,  RISCVOpcode opcode,
+               dag outs, dag ins, string opcodestr, string argstr>
+    : RVInst<outs, ins, opcodestr, argstr, [], InstFormatOther> {
+
+  let Inst{31-25} = 0b0000000;
+  let Inst{24-20} = funct5;
+  let Inst{19-15} = 0b00000;
+  let Inst{14-12} = 0b000;
+  let Inst{11-7}  = 0b00000;
+  let Opcode = opcode.Value;
+}
+
+class RVInstC910CACHE_2<bits<5> funct5,  RISCVOpcode opcode,
+               dag outs, dag ins, string opcodestr, string argstr>
+    : RVInst<outs, ins, opcodestr, argstr, [], InstFormatOther> {
+  bits<5> rs1;
+
+  let Inst{31-25} = 0b0000001;
+  let Inst{24-20} = funct5;
+  let Inst{19-15} = rs1;
+  let Inst{14-12} = 0b000;
+  let Inst{11-7}  = 0b00000;
+  let Opcode = opcode.Value;
+}
+
+
