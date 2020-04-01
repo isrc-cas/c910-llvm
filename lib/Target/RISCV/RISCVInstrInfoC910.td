@@ -286,7 +286,7 @@ def ICACHE_IALLS : CACHE_1<0b10001, "icache_ialls">;
 def L2CACHE_CALL : CACHE_1<0b10101, "l2cache_call">;
 def L2CACHE_CIALL : CACHE_1<0b10111, "l2cache_ciall">;
 def L2CACHE_IALL : CACHE_1<0b10110, "l2cache_iall">;
-
+def DCACHE_CIALL : CACHE_1<0b01011, "dcache_ciall">;
 
 
 let hasSideEffects = 1, mayLoad = 0, mayStore = 1 in
@@ -294,7 +294,6 @@ class CACHE_2<bits<5> funct5,  string opcodestr>
     : RVInstC910CACHE_2<funct5,  OPC_CUSTOM0, (outs), (ins GPR:$rs1),
               opcodestr, "$rs1">;
 
-def DCACHE_CIALL : CACHE_2<0b01011, "dcache_ciall">;
 def DCACHE_CIPA : CACHE_2<0b01011, "dcache_cipa">;
 def DCACHE_CISW : CACHE_2<0b00011, "dcache_cisw">;
 def DCACHE_CIVA : CACHE_2<0b00111, "dcache_civa">;
