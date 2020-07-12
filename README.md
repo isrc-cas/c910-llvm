@@ -174,17 +174,28 @@
 
 **编译及执行测试用例：**
 
+本仓库目前没有包含 clang 代码，需要用户使用自己的 clang 前端来一起构建。如果没有自定义的前端，
+那么可以使用LLVM官方的Clang-9.0.0版本。
+
 ```
+$ wget https://releases.llvm.org/9.0.0/cfe-9.0.0.src.tar.xz
+$ tar xf cfe-9.0.0.src.tar.xz
+$ mv cfe-9.0.0.src clang
+$ git clone https://github.com/isrc-cas/c910-llvm
 $ cd c910-llvm
 $ mkdir build
 $ cd build
-$ cmake -DLLVM_TARGETS_TO_BUILD="RISCV" -DLLVM_ENABLE_PROJECTS=clang  -G "Unix Makefiles" ../llvm
-$ make
+$ cmake -DLLVM_TARGETS_TO_BUILD="RISCV" -DLLVM_ENABLE_PROJECTS=clang  -G "Unix Makefiles" ..
+$ make -j $(nproc)
 
-$ ./bin/llvm-lit -v ../llvm/test/MC/RISCV/c910-valid.s
+# 测试，注意目前版本可能会遇到 dcache_ciall a1 命令无法处理的情况。
+# 在 Fix 之前，如果遇到错误，可以将 dcache_ciall a1 及以上2行删除。
+$ ./bin/llvm-lit -v ../test/MC/RISCV/c910-valid.s
 ```
 
 **c910指令汇编生成二进制文件：**
+
+TODO: 添加用户自己创建的 test.s 的简单教程。
 
 ```
  $ ./bin/llvm-mc test.s -triple=riscv64 -mcpu=c910 -show-encoding -show-inst --filetype=obj -o=test.o
