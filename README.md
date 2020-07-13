@@ -172,10 +172,22 @@
 
 ## (3) 测试运行
 
-**编译及执行测试用例：**
+**编译：**
 
-本仓库目前没有包含 clang 代码，需要用户使用自己的 clang 前端来一起构建。如果没有自定义的前端，
-那么可以使用LLVM官方的Clang-9.0.0版本。
+本仓库目前没有包含 clang 代码，用户可以选择使用自己的 clang 前端来一起构建。也可以仅构建本仓库代码。
+
+（1）不用clang，直接构建本仓库代码：
+
+```
+git clone https://github.com/isrc-cas/c910-llvm
+$ cd c910-llvm
+$ mkdir build
+$ cd build
+$ cmake -DLLVM_TARGETS_TO_BUILD="RISCV" -G "Unix Makefiles" ..
+$ make -j $(nproc)
+```
+
+（2）和clang一起构建：如果没有自定义的前端，那么可以使用LLVM官方的Clang-9.0.0版本。
 
 ```
 $ wget https://releases.llvm.org/9.0.0/cfe-9.0.0.src.tar.xz
@@ -187,10 +199,21 @@ $ mkdir build
 $ cd build
 $ cmake -DLLVM_TARGETS_TO_BUILD="RISCV" -DLLVM_ENABLE_PROJECTS=clang  -G "Unix Makefiles" ..
 $ make -j $(nproc)
+```
 
-# 测试，注意目前版本可能会遇到 dcache_ciall a1 命令无法处理的情况。
-# 在 Fix 之前，如果遇到错误，可以将 dcache_ciall a1 及以上2行删除。
+**执行测试用例：**
+
+```
 $ ./bin/llvm-lit -v ../test/MC/RISCV/c910-valid.s
+```
+
+执行的结果如下：
+
+```
+-- Testing: 1 tests, single process --
+PASS: LLVM :: MC/RISCV/c910-valid.s (1 of 1)
+Testing Time: 0.30s
+  Expected Passes    : 1
 ```
 
 **c910指令汇编生成二进制文件：**
