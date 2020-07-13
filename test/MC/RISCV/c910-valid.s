@@ -356,9 +356,9 @@ l2cache_ciall
 l2cache_iall
 
 
-# CHECK-ASM-AND-OBJ: dcache_ciall a1
-# CHECK-ASM: encoding: [0x0b,0x80,0xb5,0x02]
-dcache_ciall a1
+# CHECK-ASM-AND-OBJ: dcache_ciall
+# CHECK-ASM: encoding: [0x0b,0x00,0xb0,0x00]
+dcache_ciall
 
 # CHECK-ASM-AND-OBJ: dcache_cipa a1
 # CHECK-ASM: encoding: [0x0b,0x80,0xb5,0x02]
