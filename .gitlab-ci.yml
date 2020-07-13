@@ -1,0 +1,16 @@
+image: ubuntu:16.04
+
+before_script:
+
+build:
+  stage: build
+  tags:
+    - rvv-llvm
+
+  script:
+    - mkdir build
+    - cd build
+    - cmake -DLLVM_TARGETS_TO_BUILD="RISCV" -G Ninja ..
+    - ninja
+    - ./bin/llvm-lit -v ../test/MC/RISCV/c910-valid.s
+
