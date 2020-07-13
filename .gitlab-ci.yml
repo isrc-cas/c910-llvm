@@ -5,7 +5,7 @@ before_script:
 build:
   stage: build
   tags:
-    - rvv-llvm
+    - llvm
 
   script:
     - mkdir build
