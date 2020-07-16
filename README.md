@@ -218,9 +218,31 @@ Testing Time: 0.30s
 
 **c910指令汇编生成二进制文件：**
 
-TODO: 添加用户自己创建的 test.s 的简单教程。
-
 ```
  $ ./bin/llvm-mc test.s -triple=riscv64 -mcpu=c910 -show-encoding -show-inst --filetype=obj -o=test.o
 ```
+注：这里的 `test.s` 意指包含C910扩展指令的汇编文件。（可以在c/c++代码中使用内联汇编添加一条上述已定义的C910指令，然后使用clang编译生成`./bin/clang --target=riscv64-unknown-elf test.c -S -o test.s`，如下所示：）
+
+```
+int main(){
+//  asm volatile ("mula a1, a2, a3");    
+  int a,b,c;
+  a = 1;
+  b = 2;
+  asm volatile
+  (
+    "mula   %[z], %[x], %[y]\n\t"
+    : [z] "=r" (c)
+    : [x] "r" (a), [y] "r" (b)
+  );
+  if ( c == 0 ){
+     return -1;
+  }
+  return 0;
+}
+```
+
+
+
+
 
