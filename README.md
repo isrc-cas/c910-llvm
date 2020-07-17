@@ -225,7 +225,6 @@ Testing Time: 0.30s
 
 ```
 int main(){
-//  asm volatile ("mula a1, a2, a3");    
   int a,b,c;
   a = 1;
   b = 2;
