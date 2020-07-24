@@ -195,12 +195,12 @@ class Store_ab<bits<5> funct5, string opcodestr>
 
 let hasSideEffects = 0, mayLoad = 1, mayStore = 0 in
 class Load_ld<bits<5> funct5, string opcodestr>
-    : RVInstC910LS_3<funct5, 0b110, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, GPR:$rs2, simm12:$imm7),
+    : RVInstC910LS_3<funct5, 0b100, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, GPR:$rs2, simm12:$imm7),
               opcodestr, "$rd, ${imm7}(${rs1})">;
 
 let hasSideEffects = 0, mayLoad = 0, mayStore = 1 in
 class Store_sd<bits<5> funct5, string opcodestr>
-    : RVInstC910LS_3<funct5, 0b110, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, GPR:$rs2, simm12:$imm7),
+    : RVInstC910LS_3<funct5, 0b101, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, GPR:$rs2, simm12:$imm7),
               opcodestr, "$rd, ${imm7}(${rs1})">;
 
 def FLRD : Load_fl<0b01100, "flrd">;
@@ -269,7 +269,7 @@ def LWD : Load_ld<0b11100, "lwd">;
 def LWUD : Load_ld<0b11110, "lwud">;
 
 def SDD : Store_sd<0b11111, "sdd">;
-def SwD : Store_sd<0b11111, "swd">;
+def SWD : Store_sd<0b11100, "swd">;
 
 //===----------------------------------------------------------------------===//
 // cache extension instruction set 
