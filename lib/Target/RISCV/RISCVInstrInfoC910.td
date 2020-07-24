@@ -27,11 +27,11 @@ class BO_2<bits<5> funct5, bits<2> funct2, string opcodestr>
     : RVInstC910BO_2<funct5, funct2, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1),
               opcodestr, "$rd, $rs1">;                         
 
-def FF0 : BO_2<0b10000,10,"ff0">;
-def FF1 : BO_2<0b10000,11,"ff1">;
-def REV : BO_2<0b10000,01,"rev">;
-def REVW : BO_2<0b10010,00,"revw">;
-def TSTNBZ : BO_2<0b10000,00,"tstnbz">;
+def FF0    : BO_2<0b10000, 0b10, "ff0">;
+def FF1    : BO_2<0b10000, 0b11, "ff1">;
+def REV    : BO_2<0b10000, 0b01, "rev">;
+def REVW   : BO_2<0b10010, 0b00, "revw">;
+def TSTNBZ : BO_2<0b10000, 0b00, "tstnbz">;
 
 let hasSideEffects = 0, mayLoad = 0, mayStore = 1 in
 def TST : RVInstC910BO_3<0b100010, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, simm12:$imm6),
@@ -72,13 +72,13 @@ class CS_1<bits<5> funct5, bits<2> funct2, string opcodestr>
     : RVInstC910CS_1<funct5, funct2, OPC_CUSTOM0, (outs GPR:$rd), (ins GPR:$rs1, GPR:$rs2),
               opcodestr, "$rd, $rs1, $rs2">;
 
-def MULAH : CS_1<0b00101,00,"mulah">;
-def MULAW : CS_1<0b00100,10,"mulaw">;
-def MULS : CS_1<0b00100,01,"muls">;
-def MULSH : CS_1<0b00101,01,"mulsh">;
-def MULSW : CS_1<0b00100,11,"mulsw">;
-def MVEQZ : CS_1<0b00100,00,"mveqz">;
-def MVNEZ : CS_1<0b01000,01,"mvnez">;
+def MULAH : CS_1<0b00101, 0b00, "mulah">;
+def MULAW : CS_1<0b00100, 0b10, "mulaw">;
+def MULS  : CS_1<0b00100, 0b01, "muls">;
+def MULSH : CS_1<0b00101, 0b01, "mulsh">;
+def MULSW : CS_1<0b00100, 0b11, "mulsw">;
+def MVEQZ : CS_1<0b00100, 0b00, "mveqz">;
+def MVNEZ : CS_1<0b01000, 0b01, "mvnez">;
 
 def ADDSL : Instruction {
     bits<32> Inst;

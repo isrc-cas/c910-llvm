@@ -10,11 +10,11 @@ ext a0, a1, 4, 1
 extu a0, a1, 5, 1
 
 # CHECK-ASM-AND-OBJ: ff0 a0, a1
-# CHECK-ASM: encoding: [0x0b,0x95,0x05,0x80]
+# CHECK-ASM: encoding: [0x0b,0x95,0x05,0x84]
 ff0 a0, a1
 
 # CHECK-ASM-AND-OBJ: ff1 a0, a1
-# CHECK-ASM: encoding: [0x0b,0x95,0x05,0x80]
+# CHECK-ASM: encoding: [0x0b,0x95,0x05,0x86]
 ff1 a0, a1
 
 # CHECK-ASM-AND-OBJ: rev a0, a1
@@ -46,7 +46,7 @@ addsl a1, a2, a3, 1
 mulah a1, a2, a3
 
 # CHECK-ASM-AND-OBJ: mulaw a1, a2, a3
-# CHECK-ASM: encoding: [0x8b,0x15,0xd6,0x20]
+# CHECK-ASM: encoding: [0x8b,0x15,0xd6,0x24]
 mulaw a1, a2, a3
 
 # CHECK-ASM-AND-OBJ: muls a1, a2, a3
@@ -58,7 +58,7 @@ muls a1, a2, a3
 mulsh a1, a2, a3
 
 # CHECK-ASM-AND-OBJ: mulsw a1, a2, a3
-# CHECK-ASM: encoding: [0x8b,0x15,0xd6,0x20]
+# CHECK-ASM: encoding: [0x8b,0x15,0xd6,0x26]
 mulsw a1, a2, a3
 
 # CHECK-ASM-AND-OBJ: mveqz a1, a2, a3
