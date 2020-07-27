@@ -62,7 +62,7 @@ mulsh a1, a2, a3
 mulsw a1, a2, a3
 
 # CHECK-ASM-AND-OBJ: mveqz a1, a2, a3
-# CHECK-ASM: encoding: [0x8b,0x15,0xd6,0x20]
+# CHECK-ASM: encoding: [0x8b,0x15,0xd6,0x40]
 mveqz a1, a2, a3
 
 # CHECK-ASM-AND-OBJ: mvnez a1, a2, a3

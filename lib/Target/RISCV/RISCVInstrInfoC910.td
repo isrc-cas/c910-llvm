@@ -77,7 +77,7 @@ def MULAW : CS_1<0b00100, 0b10, "mulaw">;
 def MULS  : CS_1<0b00100, 0b01, "muls">;
 def MULSH : CS_1<0b00101, 0b01, "mulsh">;
 def MULSW : CS_1<0b00100, 0b11, "mulsw">;
-def MVEQZ : CS_1<0b00100, 0b00, "mveqz">;
+def MVEQZ : CS_1<0b01000, 0b00, "mveqz">; //Note:the instruction bits are incorrect in previous C910 ISA manual, which will cause encoding conflict.
 def MVNEZ : CS_1<0b01000, 0b01, "mvnez">;
 
 def ADDSL : Instruction {
