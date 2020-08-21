@@ -2,11 +2,11 @@
 # RUN:     | FileCheck -check-prefixes=CHECK-ASM,CHECK-ASM-AND-OBJ %s
 
 # CHECK-ASM-AND-OBJ: ext a0, a1, 4, 1
-# CHECK-ASM: encoding: [0x0b,0xa5,0x25,0x20]
+# CHECK-ASM: encoding: [0x0b,0xa5,0x15,0x10]
 ext a0, a1, 4, 1
 
 # CHECK-ASM-AND-OBJ: extu a0, a1, 5, 1
-# CHECK-ASM: encoding: [0x0b,0xb5,0x25,0x28]
+# CHECK-ASM: encoding: [0x0b,0xb5,0x15,0x14]
 extu a0, a1, 5, 1
 
 # CHECK-ASM-AND-OBJ: ff0 a0, a1

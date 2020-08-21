@@ -19,14 +19,14 @@ class RVInstC910BO_1<bits<3> funct3, RISCVOpcode opcode,
                dag outs, dag ins, string opcodestr, string argstr>
     : RVInst<outs, ins, opcodestr, argstr, [], InstFormatOther> {
 
-  bits<5> imm1;
+  bits<6> imm1;
   bits<6> imm2;
-  bits<6> rs1;
+  bits<5> rs1;
   bits<5> rd;
 
-  let Inst{31-27} = imm1;
-  let Inst{26-21} = imm2;
-  let Inst{20-15} = rs1;
+  let Inst{31-26} = imm1;
+  let Inst{25-20} = imm2;
+  let Inst{19-15} = rs1;
   let Inst{14-12} = funct3;
   let Inst{11-7}  = rd;
   let Opcode = opcode.Value;
@@ -35,13 +35,13 @@ class RVInstC910BO_1<bits<3> funct3, RISCVOpcode opcode,
 class RVInstC910BO_2<bits<5> funct5, bits<2> funct2, RISCVOpcode opcode,
                dag outs, dag ins, string opcodestr, string argstr>
     : RVInst<outs, ins, opcodestr, argstr, [], InstFormatOther> {
-  bits<6> rs1;
+  bits<5> rs1;
   bits<5> rd;
 
   let Inst{31-27} = funct5;
   let Inst{26-25} = funct2;
-  let Inst{24-21} = 0b0000;
-  let Inst{20-15} = rs1;
+  let Inst{24-20} = 0b00000;
+  let Inst{19-15} = rs1;
   let Inst{14-12} = 0b001;
   let Inst{11-7}  = rd;
   let Opcode = opcode.Value;
